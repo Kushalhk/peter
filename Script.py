@@ -293,7 +293,7 @@ Name - {}
 """
 
     CUSTOM_FILE_CAPTION = """<b>FILE : <code>{file_name}</code>
-    Size : <i>{file_size}</i> 
+    Size : <b> {file_name} </b> 
     @TG_LINKS_CHANNEL</b>"""
 
     RESTART_TXT = """
