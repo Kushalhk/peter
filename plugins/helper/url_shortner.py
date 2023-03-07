@@ -5,7 +5,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQue
 from pyrogram.handlers import MessageHandler
 from pyshorteners import Shortener
 
-BITLY_API = os.environ.get("BITLY_API", "ae455c94f355912ce64c2882c8c44a1f918e7e22")
+TINYFY_API = os.environ.get("TINYFY_API", "ae455c94f355912ce64c2882c8c44a1f918e7e22")
 
 reply_markup = InlineKeyboardMarkup(
         [[
@@ -51,13 +51,13 @@ async def short(link):
     shorten_urls = "**--Shorted URLs--**\n"
     
     # Bit.ly shorten
-    if BITLY_API:
+    if TINYFY_API:
         try:
-            s = Shortener(api_key=BITLY_API)
-            url = s.bitly.short(link)
-            shorten_urls += f"\n**Bit.ly :-** {url}"
+            s = Shortener(api_key=TINYFY_API)
+            url = s.tinyfy.short(link)
+            shorten_urls += f"\n**TinyFy.in :-** {url}"
         except Exception as error:
-            print(f"Bit.ly error :- {error}")
+            print(f"TinyFy.in error :- {error}")
 
     
     # Send the text
